@@ -1,0 +1,53 @@
+# 1. calculate time complexity of a algorithm
+# 2. substract two numbers using bits
+
+def subs(num1, num2):
+    num2 = (~num2)+1;    
+    return num1+num2;
+
+#print(subs(8,2))
+
+# 3. find odd/even
+
+def checkOddEven(number):
+    if number & 1:
+        print(f"{number} is odd")
+    else :
+        print("Number is even")
+
+#checkOddEven(8)
+
+# 4 swap two number a, b
+
+def swapNum(num1, num2) :
+    num1 = num1 ^ num2
+    num2 = num1 ^ num2
+    num1 = num1 ^ num2
+    #print(f"{num1}")
+    #print(f"{num2}")
+
+swapNum(2,11)
+
+# 5. Find ith positin set bits (Not solved yet)
+
+def findpos(number, pos):
+    mask = 1 << pos
+    if((number & mask) > 0):
+        print (f"ith position bit is 1")
+    else :
+        print (f"ith position bit is 0")
+
+findpos(5,2)
+
+# 6. set ith postion bit
+
+# 7. Clear ith position Bit
+     # ~(1<<i)
+
+# 8. How many bits needs to change if number A converted into B (A ^ B) , n &(n-1) == 0
+
+# 9. find the only non repeating elements in array where every elements repeats twice
+
+# 10. find the two non repeating elements in array where every elements repeats twice
+
+# 11. find the only non repeating elements in array where every elements repeats thrice

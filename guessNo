@@ -1,0 +1,33 @@
+import random
+
+def guessingNumber():
+    while True:  # game repeat loop
+        try:
+            lowlimit = int(input("Enter the lower limit of the range: "))
+            upperlimit = int(input("Enter the upper limit of the range: "))
+        except ValueError:
+            print("Please enter an integer.")
+            continue
+        
+        compilergenerated = random.randint(lowlimit, upperlimit)
+
+        while True:  # guessing loop
+            try:
+                userinput = int(input("Guess the number: "))
+            except ValueError:
+                print("Please enter an integer.")
+                continue
+
+            if compilergenerated == userinput:
+                print("Congratulations! You guessed correctly.")
+                break
+            elif compilergenerated > userinput:
+                print("You guessed too low.")
+            else:
+                print("You guessed too high.")
+        
+        play_again = input("Do you want to play again? (yes/no): ")
+        if play_again.lower() != "yes":
+            break
+
+guessingNumber()

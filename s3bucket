@@ -1,0 +1,15 @@
+import boto3
+
+# Initialize a session using DigitalOcean Spaces.
+session = boto3.session.Session()
+client = session.client('s3',
+                        region_name='ams3',
+                        endpoint_url='https://ams3.digitaloceanspaces.com',
+                        aws_access_key_id='DO00KUTBK7M66WLPD3UK',
+                        aws_secret_access_key='h8hKao7UC88/nCYGD7DHlwoXYUfylCwY3e+/b76GE3Q')
+
+# List all files in your Space
+response = client.list_objects(Bucket='finqle-loki-storagre')
+
+for obj in response['Contents']:
+    print(obj['Key'])
