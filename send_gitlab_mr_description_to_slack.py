@@ -51,8 +51,8 @@ notify:
   stage: notify
   image: python:3.10-slim-buster
   variables:
-    SLACK_WEBHOOK_URL: "https://hooks.slack.com/services/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"
-    SLACK_CHANNEL: "#k8s-alerts"  # replace with your Slack channel name
+    SLACK_WEBHOOK_URL: ""
+    SLACK_CHANNEL: ""  # replace with your Slack channel name
   script:
     - pip install requests
     - python send_gitlab_mr_description_to_slack.py
